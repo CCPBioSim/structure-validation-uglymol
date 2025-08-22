@@ -125,3 +125,11 @@ jobs:
       - name: Inspect image
         run: |
           docker buildx imagetools inspect ghcr.io/${{ github.repository }}:${{ needs.build.outputs.tag }}
+
+      - name: Post version update to dash
+        uses: peter-evans/repository-dispatch@v3.0.0
+        with:
+          token: ${{ secrets.BUILD_TOKEN }}
+          repository: jimboid/biosim-workshop-dash
+          event-type: build    
+          client-payload: '{"repo": "${{ github.repository }}", "tag": "${{ needs.build.outputs.tag }}"}'
