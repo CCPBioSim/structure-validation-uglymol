@@ -130,6 +130,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v3.0.0
         with:
           token: ${{ secrets.BUILD_TOKEN }}
-          repository: jimboid/biosim-workshop-dash
+          repository: jimboid/biosim-workshops-dash
           event-type: build    
           client-payload: '{"repo": "${{ github.repository }}", "tag": "${{ needs.build.outputs.tag }}"}'
