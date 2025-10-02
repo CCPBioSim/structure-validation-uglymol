@@ -39,7 +39,7 @@ jobs:
         uses: docker/login-action@v3.6.0
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.BUILD_TOKEN }}
 
       - name: Set up Docker Buildx
@@ -86,7 +86,7 @@ jobs:
         uses: docker/login-action@v3.6.0
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.BUILD_TOKEN }}
 
       - name: Set up Docker Buildx
