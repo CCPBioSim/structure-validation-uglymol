@@ -145,5 +145,5 @@ jobs:
         with:
           token: ${{ secrets.BUILD_TOKEN }}
           repository: ccpbiosim/ccpbiosim.github.io
-          event-type: workshops
+          event-type: build
           client-payload: ${{ steps.payload.outputs.json }}
